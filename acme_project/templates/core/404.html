@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Custom 404{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+  <div class="text-center p-8 bg-white rounded-lg shadow-lg max-w-md">
+      <h1 class="text-8xl font-extrabold text-blue-400">404</h1>
+      <p class="text-gray-600 mb-6">Страницы с адресом <span class="font-mono text-gray-800">{{ request.path }}</span> не существует</p>
+      <a href="{% url 'pages:homepage' %}" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition">Идите на главную</a>
+  </div>
+
+{% endblock %}
